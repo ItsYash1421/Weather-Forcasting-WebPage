@@ -1,10 +1,11 @@
-body {
-    font-family: Arial, sans-serif;
-    
-  }
-  body::before
-  {
-    content: '';
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+body::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -15,102 +16,135 @@ body {
   background-position: center;
   filter: blur(5px); /* Adjust the blur amount as needed */
   z-index: -1;
-  }
-  .main{
-    display: flex;
-  }
-  .container {
-    border-radius: 8px;
-    border: 2px solid black; 
-    max-width: 400px;
-    max-height: 600px;
-    margin: 40px 150px;
-    text-align: center;
-    background-color: black;
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    padding: 20px;
-  }
-  .top-cities-container {
-    border-radius: 8px;
-    border: 2px solid black; 
-    width: 300px;
-    max-height: 300px;
-    max-width: 400px;
-    margin: 40px auto;
-    text-align: center;
-    background-color: black;
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    padding: 20px; /* Added padding for better spacing */
-  }
-  
-  input[type="text"], button {
-    padding: 10px;
-    margin: 10px;
-    width: 70%;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Added a transition for hover effect */
-  }
-  
-  button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-  
-  .weather-info {
-    margin-top: 20px;
-  }
-  
-  .error {
-    color: red;
-  }
-  
-  .weather, .desc {
-    margin: 10px 0;
-  }
-  
-  .temp_container {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .temp_container div {
-    flex: 1;
-  }
-  /* For Script Html */
-  .sdiv
-  {
-    display: flex;
-    justify-content: space-around;
-  }
-  .mode-toggle {
-    align-items: center;
-    top: 20px;
-    right: 50px;
-    padding-top: 25%;
-    padding-left: 30%;
-    padding-bottom: 600px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container, .top-cities-container {
+  border-radius: 8px;
+  border: 2px solid black; 
+  width: 90%;
+  max-width: 400px;
+  margin: 20px 0;
+  text-align: center;
+  background-color: black;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  padding: 20px;
+}
+
+input[type="text"], button {
+  padding: 10px;
+  margin: 10px;
+  width: 70%;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Added a transition for hover effect */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.weather-info {
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+}
+
+.weather, .desc {
+  margin: 10px 0;
+}
+
+.temp_container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.temp_container div {
+  flex: 1;
+}
+
+/* For Script Html */
+.sdiv {
+  display: flex;
+  justify-content: space-around;
+}
+
+.mode-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  padding-top: 30px;
+  align-items: center;
 }
 
 .mode-toggle img {
-    padding-left: 30px;
-    cursor: pointer;
-    width: 100px;
-    height: 100px;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
 }
 
 body.dark-mode {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
+
 body.dark-mode::before {
-    filter: blur(5px) brightness(0.0); /* Darken the background image */
+  filter: blur(5px) brightness(0.5); /* Darken the background image */
+}
+
+.main2
+{
+  padding-left: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  body::before {
+      width: 94%;
+      height: 100%;
+  }
+  
+  .main {
+    width:315px;
+    padding-top: 10px;
+    padding-left: 35px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+  }
+  .main2
+  {
+    padding-right: 90px;
+  }
+  .container, .top-cities-container {
+      width: 100%;
+      max-width: 100%;
+      margin: 10px 0;
+  }
+  .mode-toggle {
+    position: absolute;
+    display: none;
+    margin-top: 0px;
+    padding-top: 0px;
+    align-items: center;
+  }
+  
 }
